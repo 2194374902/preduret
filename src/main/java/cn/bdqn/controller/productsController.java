@@ -1,5 +1,6 @@
 package cn.bdqn.controller;
 
+import cn.bdqn.mapper.productsMapper;
 import cn.bdqn.model.Dto.productsDto;
 import cn.bdqn.model.Dto.qualitiesDto;
 import cn.bdqn.model.Param.productParam;
@@ -20,7 +21,8 @@ import java.util.List;
 public class productsController {
     @Autowired
     productsService productsService;
-
+    @Autowired
+    productsMapper mapper;
     @GetMapping("/")
     public String index(@RequestParam(value = "mohu", required = false, defaultValue = "") String mohu,
                         Model model,
