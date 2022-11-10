@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="'http://localhost:91/update'" method="get">
+    <table border="1px black solid" style="text-align: center" align="center">
+        <tr style="background-color: #FEAECA">
+            <td colspan="2">质检操作</td>
+        </tr>
+        <tr>
+            <td>产品名称：</td>
+            <td><input type="text" th:value="${list.getProductName()}"></td>
+        </tr>
+        <tr>
+            <td>质检结果</td>
+            <td><select name="score"><option>请选择</option>
+                <option th:value="${1}" name="score">合格</option>
+                <option th:value="${2}" name="score">不合格</option>
+            </select></td>
+        </tr>
+        <tr>
+            <td>质检备注</td>
+            <td><input type="text" name="qualityDesc"><input type="hidden" th:value="${list.getId()}" name="productId"></td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="submit" value="提交"><a href="http://localhost:91"><button>返回</button></a></td>
+        </tr>
+
+    </table>
+</form>
+</body>
+</html>
